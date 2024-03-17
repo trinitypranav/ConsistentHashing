@@ -1,0 +1,12 @@
+{
+  "name": "consistenthashing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node cs.js"
+  },
+  "keywords": ["consistent hashing", "load balancing", "system design"],
+  "author": "",
+  "license": "ISC"
+}
