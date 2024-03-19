@@ -22,4 +22,8 @@ class ConsistentHashing {
     this.sortedHashes.sort();
   }
 
+  hash(key) {
+    return crypto.createHash("md5").update(key).digest("hex");
+  }
+
 }
