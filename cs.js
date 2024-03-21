@@ -26,4 +26,18 @@ class ConsistentHashing {
     return crypto.createHash("md5").update(key).digest("hex");
   }
 
+  getNodeForKey(key) {
+    const hash = this.hash(key);
+    const targetHash = this.findClosestHash(hash);
+    return this.hashRing[targetHash];
+  }
+
+  findClosestHash(hash) {
+    for (const ringHash of this.sortedHashes) {
+      if (ringHash >= hash) {
+        return ringHash;
+      }
+    }
+    return this.sortedHashes[0];
+  }
 }
