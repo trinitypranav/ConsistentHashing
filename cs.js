@@ -45,3 +45,6 @@ class ConsistentHashing {
 // Example usage
 const nodes = ["node1", "node2", "node3"];
 const ch = new ConsistentHashing(nodes);
+
+console.log(ch.getNodeForKey("key1")); // Output will be one of the nodes
+console.log(ch.getNodeForKey("key2")); // Output will be one of the nodes
