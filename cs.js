@@ -41,3 +41,7 @@ class ConsistentHashing {
     return this.sortedHashes[0];
   }
 }
+
+// Example usage
+const nodes = ["node1", "node2", "node3"];
+const ch = new ConsistentHashing(nodes);
