@@ -40,6 +40,15 @@ class ConsistentHashing {
     }
     return this.sortedHashes[0];
   }
+  addNode(node) {
+    for (let i = 0; i < this.replicas; i++) {
+      const hash = this.hash(`${node}:${i}`);
+      this.hashRing[hash] = node;
+      this.sortedHashes.push(hash);
+    }
+    this.sortedHashes.sort();
+    this.nodes.push(node);
+  }
 }
 
 // Example usage
