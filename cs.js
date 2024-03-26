@@ -49,6 +49,12 @@ class ConsistentHashing {
     this.sortedHashes.sort();
     this.nodes.push(node);
   }
+  removeNode(node) {
+    for (let i = 0; i < this.replicas; i++) {
+      const hash = this.hash(`${node}:${i}`);
+      delete this.hashRing[hash];
+    }
+  }
 }
 
 // Example usage
