@@ -54,6 +54,10 @@ class ConsistentHashing {
       const hash = this.hash(`${node}:${i}`);
       delete this.hashRing[hash];
     }
+    this.sortedHashes = this.sortedHashes.filter(
+      (hash) => !hash.startsWith(node)
+    );
+    this.nodes = this.nodes.filter((n) => n !== node);
   }
 }
 
