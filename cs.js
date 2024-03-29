@@ -67,3 +67,6 @@ const ch = new ConsistentHashing(nodes);
 
 console.log(ch.getNodeForKey("key1")); // Output will be one of the nodes
 console.log(ch.getNodeForKey("key2")); // Output will be one of the nodes
+
+ch.addNode("node4");
+console.log(ch.getNodeForKey("key3")); // Output will be one of the nodes, including node4 now
