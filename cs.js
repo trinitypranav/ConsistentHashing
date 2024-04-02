@@ -70,3 +70,7 @@ console.log(ch.getNodeForKey("key2")); // Output will be one of the nodes
 
 ch.addNode("node4");
 console.log(ch.getNodeForKey("key3")); // Output will be one of the nodes, including node4 now
+
+ch.removeNode("node1");
+console.log(ch.getNodeForKey("key4")); // Output will be one of the remaining nodes
+console.log(ch.getNodeForKey("key4")); // Output will be one of the remaining nodes
